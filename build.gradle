@@ -1,0 +1,99 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+buildscript {
+    ext {
+        springBootVersion = '2.0.0.M2'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+idea {
+    project {
+        jdkName = '1.8'
+        languageLevel = '1.8'
+        vcs = 'Git'
+    }
+    module {
+        downloadJavadoc = false
+        downloadSources = true
+    }
+}
+
+dependencies {
+
+    ext.springVersion = "5.0.2.RELEASE"
+    ext.slf4jVersion = "1.7.21"
+
+    compile "org.springframework:spring-beans:${springVersion}"
+    compile "org.springframework:spring-core:${springVersion}"
+    compile "org.springframework:spring-context:${springVersion}"
+    compile "org.springframework:spring-expression:${springVersion}"
+    compile "org.springframework:spring-web:${springVersion}"
+    compile "org.springframework:spring-webmvc:${springVersion}"
+    compile "org.springframework:spring-test:${springVersion}"
+    compile "org.springframework:spring-orm:${springVersion}"
+
+
+    compile "org.springframework.boot:spring-boot-autoconfigure:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+
+    compile "org.springframework.boot:spring-boot-starter-aop:${springBootVersion}"
+    compile "org.springframework.boot:spring-boot-starter-tomcat:${springBootVersion}"
+
+
+    compile "org.apache.commons:commons-lang3:3.4"
+    compile "commons-io:commons-io:2.5"
+
+    compile "commons-logging:commons-logging:1.2"
+    compile "commons-codec:commons-codec:1.10"
+    compile "javax.servlet:javax.servlet-api:3.1.0"
+    compile "org.slf4j:slf4j-api:${slf4jVersion}"
+
+
+    compile "org.apache.logging.log4j:log4j-core:2.10.0"
+    compile "org.apache.logging.log4j:log4j-api:2.10.0"
+
+
+    compile 'org.springframework.data:spring-data-commons:2.0.2.RELEASE'
+    compile 'org.springframework.data:spring-data-elasticsearch:3.0.2.RELEASE'
+
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-logging'
+    compile 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+
+    compile 'org.elasticsearch:elasticsearch:5.4.1'
+    compile 'org.elasticsearch.client:transport:5.4.1'
+
+//    compile 'com.google.guava:guava:20.0'
+}
+
+
+
+
+
+
+
