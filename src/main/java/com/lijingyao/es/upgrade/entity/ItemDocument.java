@@ -18,8 +18,6 @@ public class ItemDocument {
     public static final String TYPE = "item";
 
 
-
-
     public ItemDocument() {
     }
 
@@ -47,7 +45,7 @@ public class ItemDocument {
     /**
      * 商品名称
      */
-    @Field(type = FieldType.keyword)
+    @Field(type = FieldType.text,index = false)
     private String name;
 
 

@@ -1,7 +1,7 @@
 package com.lijingyao.es.upgrade.rest;
 
 import com.lijingyao.es.upgrade.entity.ItemDocument;
-import com.lijingyao.es.upgrade.repository.CommodityDocumentRepository;
+import com.lijingyao.es.upgrade.repository.ItemDocumentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class SearchController {
 
     @Autowired
-    private CommodityDocumentRepository repository;
+    private ItemDocumentRepository repository;
 
 
     @RequestMapping(value = "/{id}",method = {RequestMethod.GET})
