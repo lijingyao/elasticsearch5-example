@@ -33,7 +33,7 @@ public class ItemDocument {
      * 商品唯一标识
      */
     @Id
-    @Field(type = FieldType.keyword)
+    @Field(type = FieldType.Keyword)
     private String id;
 
     /**
@@ -45,7 +45,7 @@ public class ItemDocument {
     /**
      * 商品名称
      */
-    @Field(type = FieldType.text,index = false)
+    @Field(type = FieldType.Keyword)
     private String name;
 
 
@@ -56,13 +56,11 @@ public class ItemDocument {
     private Long price;
 
 
-
     /**
      * 商品的描述
      */
-    @Field(type = FieldType.text, searchAnalyzer = "ik", analyzer = "ik")
+    @Field(type = FieldType.Text)
     private String description;
-
 
 
     public String getId() {
